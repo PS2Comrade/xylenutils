@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -O2 -std=c99 -D_GNU_SOURCE
-LDFLAGS =
+LDFLAGS = 
 
 SRCDIR = src
 APPLETDIR = $(SRCDIR)/applets
@@ -12,12 +12,17 @@ SRCS = $(SRCDIR)/main.c \
        $(APPLETDIR)/cp.c \
        $(APPLETDIR)/echo.c \
        $(APPLETDIR)/pwd.c \
-       $(APPLETDIR)/mkdir.c
+       $(APPLETDIR)/mkdir.c \
+       $(APPLETDIR)/rm.c \
+       $(APPLETDIR)/mv.c \
+       $(APPLETDIR)/touch.c \
+       $(APPLETDIR)/head.c \
+       $(APPLETDIR)/tail.c
 
 OBJS = $(SRCS:.c=.o)
 TARGET = xylenutils
 
-APPLETS = ls cat cp echo pwd mkdir
+APPLETS = cat cp echo head ls mkdir mv pwd rm tail touch
 
 .PHONY: all clean install
 
